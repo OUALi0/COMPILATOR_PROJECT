@@ -1,0 +1,256 @@
+<<<<<<< HEAD
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    SPACE
+
+Grammar
+
+Rule 0     S' -> sentence
+Rule 1     sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH SEVENTH
+Rule 2     sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH
+Rule 3     sentence -> FIRST SECOND THIRD FOURTH FIFTH
+Rule 4     sentence -> FIRST SECOND THIRD FOURTH
+Rule 5     sentence -> FIRST SECOND THIRD
+
+Terminals, with rules where they appear
+
+FIFTH                : 1 2 3
+FIRST                : 1 2 3 4 5
+FOURTH               : 1 2 3 4
+SECOND               : 1 2 3 4 5
+SEVENTH              : 1
+SIXTH                : 1 2
+SPACE                : 
+THIRD                : 1 2 3 4 5
+error                : 
+
+Nonterminals, with rules where they appear
+
+sentence             : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . sentence
+    (1) sentence -> . FIRST SECOND THIRD FOURTH FIFTH SIXTH SEVENTH
+    (2) sentence -> . FIRST SECOND THIRD FOURTH FIFTH SIXTH
+    (3) sentence -> . FIRST SECOND THIRD FOURTH FIFTH
+    (4) sentence -> . FIRST SECOND THIRD FOURTH
+    (5) sentence -> . FIRST SECOND THIRD
+
+    FIRST           shift and go to state 2
+
+    sentence                       shift and go to state 1
+
+state 1
+
+    (0) S' -> sentence .
+
+
+
+state 2
+
+    (1) sentence -> FIRST . SECOND THIRD FOURTH FIFTH SIXTH SEVENTH
+    (2) sentence -> FIRST . SECOND THIRD FOURTH FIFTH SIXTH
+    (3) sentence -> FIRST . SECOND THIRD FOURTH FIFTH
+    (4) sentence -> FIRST . SECOND THIRD FOURTH
+    (5) sentence -> FIRST . SECOND THIRD
+
+    SECOND          shift and go to state 3
+
+
+state 3
+
+    (1) sentence -> FIRST SECOND . THIRD FOURTH FIFTH SIXTH SEVENTH
+    (2) sentence -> FIRST SECOND . THIRD FOURTH FIFTH SIXTH
+    (3) sentence -> FIRST SECOND . THIRD FOURTH FIFTH
+    (4) sentence -> FIRST SECOND . THIRD FOURTH
+    (5) sentence -> FIRST SECOND . THIRD
+
+    THIRD           shift and go to state 4
+
+
+state 4
+
+    (1) sentence -> FIRST SECOND THIRD . FOURTH FIFTH SIXTH SEVENTH
+    (2) sentence -> FIRST SECOND THIRD . FOURTH FIFTH SIXTH
+    (3) sentence -> FIRST SECOND THIRD . FOURTH FIFTH
+    (4) sentence -> FIRST SECOND THIRD . FOURTH
+    (5) sentence -> FIRST SECOND THIRD .
+
+    FOURTH          shift and go to state 5
+    $end            reduce using rule 5 (sentence -> FIRST SECOND THIRD .)
+
+
+state 5
+
+    (1) sentence -> FIRST SECOND THIRD FOURTH . FIFTH SIXTH SEVENTH
+    (2) sentence -> FIRST SECOND THIRD FOURTH . FIFTH SIXTH
+    (3) sentence -> FIRST SECOND THIRD FOURTH . FIFTH
+    (4) sentence -> FIRST SECOND THIRD FOURTH .
+
+    FIFTH           shift and go to state 6
+    $end            reduce using rule 4 (sentence -> FIRST SECOND THIRD FOURTH .)
+
+
+state 6
+
+    (1) sentence -> FIRST SECOND THIRD FOURTH FIFTH . SIXTH SEVENTH
+    (2) sentence -> FIRST SECOND THIRD FOURTH FIFTH . SIXTH
+    (3) sentence -> FIRST SECOND THIRD FOURTH FIFTH .
+
+    SIXTH           shift and go to state 7
+    $end            reduce using rule 3 (sentence -> FIRST SECOND THIRD FOURTH FIFTH .)
+
+
+state 7
+
+    (1) sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH . SEVENTH
+    (2) sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH .
+
+    SEVENTH         shift and go to state 8
+    $end            reduce using rule 2 (sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH .)
+
+
+state 8
+
+    (1) sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH SEVENTH .
+
+    $end            reduce using rule 1 (sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH SEVENTH .)
+
+=======
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    SPACE
+
+Grammar
+
+Rule 0     S' -> sentence
+Rule 1     sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH SEVENTH
+Rule 2     sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH
+Rule 3     sentence -> FIRST SECOND THIRD FOURTH FIFTH
+Rule 4     sentence -> FIRST SECOND THIRD FOURTH
+Rule 5     sentence -> FIRST SECOND THIRD
+Rule 6     sentence -> FIRST SECOND
+Rule 7     sentence -> FIRST
+
+Terminals, with rules where they appear
+
+FIFTH                : 1 2 3
+FIRST                : 1 2 3 4 5 6 7
+FOURTH               : 1 2 3 4
+SECOND               : 1 2 3 4 5 6
+SIXTH                : 1 2
+SPACE                : 
+THIRD                : 1 2 3 4 5
+error                : 
+
+Nonterminals, with rules where they appear
+
+SEVENTH              : 1
+sentence             : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . sentence
+    (1) sentence -> . FIRST SECOND THIRD FOURTH FIFTH SIXTH SEVENTH
+    (2) sentence -> . FIRST SECOND THIRD FOURTH FIFTH SIXTH
+    (3) sentence -> . FIRST SECOND THIRD FOURTH FIFTH
+    (4) sentence -> . FIRST SECOND THIRD FOURTH
+    (5) sentence -> . FIRST SECOND THIRD
+    (6) sentence -> . FIRST SECOND
+    (7) sentence -> . FIRST
+
+    FIRST           shift and go to state 2
+
+    sentence                       shift and go to state 1
+
+state 1
+
+    (0) S' -> sentence .
+
+
+
+state 2
+
+    (1) sentence -> FIRST . SECOND THIRD FOURTH FIFTH SIXTH SEVENTH
+    (2) sentence -> FIRST . SECOND THIRD FOURTH FIFTH SIXTH
+    (3) sentence -> FIRST . SECOND THIRD FOURTH FIFTH
+    (4) sentence -> FIRST . SECOND THIRD FOURTH
+    (5) sentence -> FIRST . SECOND THIRD
+    (6) sentence -> FIRST . SECOND
+    (7) sentence -> FIRST .
+
+    SECOND          shift and go to state 3
+    $end            reduce using rule 7 (sentence -> FIRST .)
+
+
+state 3
+
+    (1) sentence -> FIRST SECOND . THIRD FOURTH FIFTH SIXTH SEVENTH
+    (2) sentence -> FIRST SECOND . THIRD FOURTH FIFTH SIXTH
+    (3) sentence -> FIRST SECOND . THIRD FOURTH FIFTH
+    (4) sentence -> FIRST SECOND . THIRD FOURTH
+    (5) sentence -> FIRST SECOND . THIRD
+    (6) sentence -> FIRST SECOND .
+
+    THIRD           shift and go to state 4
+    $end            reduce using rule 6 (sentence -> FIRST SECOND .)
+
+
+state 4
+
+    (1) sentence -> FIRST SECOND THIRD . FOURTH FIFTH SIXTH SEVENTH
+    (2) sentence -> FIRST SECOND THIRD . FOURTH FIFTH SIXTH
+    (3) sentence -> FIRST SECOND THIRD . FOURTH FIFTH
+    (4) sentence -> FIRST SECOND THIRD . FOURTH
+    (5) sentence -> FIRST SECOND THIRD .
+
+    FOURTH          shift and go to state 5
+    $end            reduce using rule 5 (sentence -> FIRST SECOND THIRD .)
+
+
+state 5
+
+    (1) sentence -> FIRST SECOND THIRD FOURTH . FIFTH SIXTH SEVENTH
+    (2) sentence -> FIRST SECOND THIRD FOURTH . FIFTH SIXTH
+    (3) sentence -> FIRST SECOND THIRD FOURTH . FIFTH
+    (4) sentence -> FIRST SECOND THIRD FOURTH .
+
+    FIFTH           shift and go to state 6
+    $end            reduce using rule 4 (sentence -> FIRST SECOND THIRD FOURTH .)
+
+
+state 6
+
+    (1) sentence -> FIRST SECOND THIRD FOURTH FIFTH . SIXTH SEVENTH
+    (2) sentence -> FIRST SECOND THIRD FOURTH FIFTH . SIXTH
+    (3) sentence -> FIRST SECOND THIRD FOURTH FIFTH .
+
+    SIXTH           shift and go to state 7
+    $end            reduce using rule 3 (sentence -> FIRST SECOND THIRD FOURTH FIFTH .)
+
+
+state 7
+
+    (1) sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH . SEVENTH
+    (2) sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH .
+
+    SEVENTH         shift and go to state 8
+    $end            reduce using rule 2 (sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH .)
+
+
+state 8
+
+    (1) sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH SEVENTH .
+
+    $end            reduce using rule 1 (sentence -> FIRST SECOND THIRD FOURTH FIFTH SIXTH SEVENTH .)
+
+>>>>>>> origin/nassim
